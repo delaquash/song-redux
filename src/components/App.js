@@ -1,4 +1,5 @@
 import React from 'react';
+import SongDetail from './SongDetail';
 import SongList from './SongList';
 
 
@@ -9,6 +10,9 @@ import SongList from './SongList';
             <div className="ui row">
                 <div className="column eight wide">
                     <SongList />
+                </div>
+                <div className="column eight wide">
+                    <SongDetail />
                 </div>
             </div>
         </div>
