@@ -1,3 +1,6 @@
+import jsonPlaceHlder from "../api/jsonPlaceHlder";
+
+
 // Action Creators
 // This action creator is for the select song redux tutorial
 // export const selectSong = (song) => {
@@ -13,8 +16,23 @@
 
 // This action creator is for the axios and jsonplaceholder tutorial
 
-export const fetchPosts = () => {
-    return {
-        type: 'FETCH_POSTS'
-    };
-};
+// export const fetchPosts = () => {
+//     return async function (dispatch, getState) {
+//         const response = await jsonPlaceHlder.get('/post')
+//         dispatch ({
+//             type: 'FETCH_POSTS',
+//             payload: response
+//         });
+//     }
+// };
+
+// from redux thunk source code on github, we can see that a function was called inside another function...
+// The above examplke can be broken down to this below
+
+export const fetchPosts = () => async dispatch => {
+    const response = await jsonPlaceHlder.get('/post');
+    dispatch ({
+        type: 'FETCH_POSTS',
+        payload: response
+    })
+}
