@@ -1,9 +1,7 @@
 import React from 'react';
 import PostList from './PostList';
-import SongDetail from './SongDetail';
-import SongList from './SongList';
-
-
+// import SongDetail from './SongDetail';
+// import SongList from './SongList';
 
 
  const App =() =>{

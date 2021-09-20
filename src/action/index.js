@@ -1,4 +1,4 @@
-import jsonPlaceHlder from "../api/jsonPlaceHlder";
+import jsonPlaceHolder from "../api/jsonPlaceHolder";
 
 
 // Action Creators
@@ -30,7 +30,7 @@ import jsonPlaceHlder from "../api/jsonPlaceHlder";
 // The above examplke can be broken down to this below
 
 export const fetchPosts = () => async dispatch => {
-    const response = await jsonPlaceHlder.get('/post');
+    const response = await jsonPlaceHolder.get('/posts');
     dispatch ({
         type: 'FETCH_POSTS',
         payload: response
