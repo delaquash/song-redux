@@ -7,11 +7,27 @@ import { fetchPosts } from '../action'
      componentDidMount(){
         this.props.fetchPosts();
      }
+
+     renderList() {
+         return this.props.posts.map(post => {
+             return (
+                <div className="item" key={post.id}>
+                    <i className="large middle aligned icon user" />
+                    <div className="content">
+                        <div className="description">
+                            <h2>{post.title}</h2>
+                            <p>{post.body}</p>
+                        </div>
+                    </div>
+                </div>
+             );
+         });
+     }
      render() {
          console.log(this.props);
             return (
                     <div>
-                        <h1>Hello</h1>
+                        <h1>{this.renderList()}</h1>
                     </div>
                     )          
      }     

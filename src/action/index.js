@@ -33,6 +33,17 @@ export const fetchPosts = () => async dispatch => {
     const response = await jsonPlaceHolder.get('/posts');
     dispatch ({
         type: 'FETCH_POSTS',
-        payload: response
+        payload: response.data
+    })
+}
+
+
+// Action creator to fetch a single user
+export const fetchUsers = (id) => async dispatch =>  {
+    const response = await jsonPlaceHolder.get(`/users/${id}`);
+
+    dispatch({
+        type : 'FETCH_USERS',
+        payload: response.data
     })
 }
