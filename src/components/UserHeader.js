@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { fetchUsers } from '../action';
 
@@ -12,9 +12,13 @@ import { fetchUsers } from '../action';
                 user.id === this.props.userId
             )
 
+            if(!user){
+                return null;
+            }
+
         return (
-            <div>
-                
+            <div className="header">
+                {user.name}
             </div>
         )
     }
@@ -24,7 +28,7 @@ const mapStateToProps =(state) => {
     return  { users: state.users }
 }
 
-export default connect(null, {
+export default connect(mapStateToProps, {
     fetchUsers
 })
  (UserHeader);
